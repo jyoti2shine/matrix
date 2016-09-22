@@ -58,3 +58,12 @@ a:hover,a:focus{
 .footer-link{
     color: white !important;
 }
+.form-control{
+    width:50%;
+}
+.table{
+    width:60%;
+}
+#training_number_of_day{
+    width:10%;
+}

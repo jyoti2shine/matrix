@@ -1,0 +1,19 @@
+<div class="position_lists" style="margin-left:70px;">
+  <%= link_to "CreatePosition", new_position_path,:class => "btn btn-primary pull-left",:style=>"margin-top:10px;" %><br><br><br>
+  <table class="table table-striped",style="width:60%;">
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="2">Action</th>
+    </tr>
+    <% @positions.each do |position| %>
+        <tr>
+          <td><%= position.title %></td>
+          <td><%= position.description %></td>
+          <td><%= link_to 'Edit', edit_position_path(position) %></td>
+          <td><%= link_to 'Destroy',position_path(position) ,:method => :delete , :data=> { :confirm=> 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+  </table>
+  <%= link_to "Back",root_url,:class=>"btn btn-success" %>
+</div>

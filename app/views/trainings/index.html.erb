@@ -1,0 +1,21 @@
+<div class="training_lists" style="margin-left:70px;">
+  <%= link_to "CreateTraining", new_training_path,:class => "btn btn-primary pull-left",:style=>"margin-top:10px;" %><br><br><br>
+  <table class="table table-striped",style="width:60%;">
+    <tr>
+      <th>Name</th>
+      <th>Certification</th>
+      <th>Number of Days</th>
+      <th colspan="2">Action</th>
+    </tr>
+    <% @trainings.each do |training| %>
+        <tr>
+          <td><%= training.name %></td>
+          <td><%= training.certification %></td>
+          <td><%= training.number_of_day %></td>
+          <td><%= link_to 'Edit', edit_training_path(training) %></td>
+          <td><%= link_to 'Destroy',training_path(training) ,:method => :delete ,remote: true, :data=> { :confirm=> 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+  </table>
+  <%= link_to "Back",root_url,:class=>"btn btn-success" %>
+</div>

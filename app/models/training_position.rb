@@ -1,0 +1,2 @@
+class TrainingPosition < ApplicationRecord
+end
