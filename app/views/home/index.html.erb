@@ -1,21 +1,19 @@
-<div style="margin-left:100px;">
-  <h4>Welcome to this Application</h4>
-  <%= link_to "Create Position", positions_path,:class => "btn btn-primary" %><br><br>
-  <%= link_to "Create Training", trainings_path,:class => "btn btn-primary" %>
+<div class="col-lg-12">
   <h3>Matrix Table</h3>
+  <div class="col-lg-10">
   <p class="position-text"><b>Positions</b></p>
-  <table class="responsive-table-input-matrix">
-    <thead>
-    <tr>
-      <td></td>
-      <% @positions.each do |position|%>
-          <td><%=position.title%></td>
-      <% end %>
-    </tr>
-    </thead>
-    <tbody>
-    <% @trainings.each do |training|%>
-        <tr>
+    <table class="responsive-table-input-matrix">
+      <thead>
+      <tr>
+        <td></td>
+        <% @positions.each do |position|%>
+            <td><%=position.title%></td>
+        <% end %>
+      </tr>
+      </thead>
+      <tbody>
+      <% @trainings.each do |training|%>
+          <tr>
           <td><%= training.name %></td>
           <% $i = 0 %>
           <% while $i < @positions.count  do %>
@@ -25,8 +23,13 @@
               <% end %>
           <% end %>
         </tr>
-    <% end %>
-    </tbody>
-  </table>
-  <p class="training-text"><b>Trainings</b></p>
+      <% end %>
+      </tbody>
+    </table>
+    <p class="training-text"><b>Trainings</b></p>
+  </div>
+  <div class="col-lg-2">
+    <%= link_to "Create Position", positions_path,:class => "pull-right btn btn-primary" %><br><br>
+    <%= link_to "Create Training", trainings_path,:class => "pull-right btn btn-primary" %>
+  </div>
 </div>
