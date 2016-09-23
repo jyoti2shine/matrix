@@ -1,8 +1,9 @@
-<div style="margin-left:20px;">
+<div style="margin-left:100px;">
   <h4>Welcome to this Application</h4>
   <%= link_to "Create Position", positions_path,:class => "btn btn-primary" %><br><br>
   <%= link_to "Create Training", trainings_path,:class => "btn btn-primary" %>
   <h3>Matrix Table</h3>
+  <p class="position-text"><b>Positions</b></p>
   <table class="responsive-table-input-matrix">
     <thead>
     <tr>
@@ -18,11 +19,14 @@
           <td><%= training.name %></td>
           <% $i = 0 %>
           <% while $i < @positions.count  do %>
-              <td><input type="checkbox" value =<%= training.id %> id="<%= training.id %>"></td>
-              <% $i +=1 %>
+              <% @positions.each do |position|%>
+                  <td><input type="checkbox" value =<%= training.id %>,<%= position.id %> id="<%= training.id %>,<%= position.id %>"></td>
+                  <% $i +=1 %>
+              <% end %>
           <% end %>
         </tr>
     <% end %>
     </tbody>
   </table>
+  <p class="training-text"><b>Trainings</b></p>
 </div>

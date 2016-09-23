@@ -150,3 +150,9 @@ td, th {
         text-align: right;
     }
 }
+.training-text{
+    float:left;margin-left:-80px;margin-top:-100px;
+}
+.position-text{
+    margin-left:550px;
+}
