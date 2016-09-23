@@ -16,10 +16,11 @@
     <% @trainings.each do |training|%>
         <tr>
           <td><%= training.name %></td>
-          <td><input type="checkbox"></td>
-          <td><input type="checkbox"></td>
-          <td><input type="checkbox"></td>
-          <td><input type="checkbox"></td>
+          <% $i = 0 %>
+          <% while $i < @positions.count  do %>
+              <td><input type="checkbox" value =<%= training.id %> id="<%= training.id %>"></td>
+              <% $i +=1 %>
+          <% end %>
         </tr>
     <% end %>
     </tbody>
