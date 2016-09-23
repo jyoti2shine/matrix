@@ -1,7 +1,27 @@
 <div style="margin-left:20px;">
   <h4>Welcome to this Application</h4>
-  <%= link_to "Create Position", positions_path,:class=>"btn btn-primary" %><br><br>
-  <%= link_to "Create Training", trainings_path,:class=>"btn btn-primary" %>
+  <%= link_to "Create Position", positions_path,:class => "btn btn-primary" %><br><br>
+  <%= link_to "Create Training", trainings_path,:class => "btn btn-primary" %>
+  <h3>Matrix Table</h3>
+  <table class="responsive-table-input-matrix">
+    <thead>
+    <tr>
+      <td></td>
+      <% @positions.each do |position|%>
+          <td><%=position.title%></td>
+      <% end %>
+    </tr>
+    </thead>
+    <tbody>
+    <% @trainings.each do |training|%>
+        <tr>
+          <td><%= training.name %></td>
+          <td><input type="checkbox"></td>
+          <td><input type="checkbox"></td>
+          <td><input type="checkbox"></td>
+          <td><input type="checkbox"></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>
-
-
