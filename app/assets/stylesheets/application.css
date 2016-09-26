@@ -163,5 +163,8 @@ td, th {
     margin-left:550px;
 }
 .container {
-    width: 97%;
+    width: 100%;
+}
+.col-lg-2{
+    margin-top:22px;
 }

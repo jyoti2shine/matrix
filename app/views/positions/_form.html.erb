@@ -1,23 +1,24 @@
-<%= form_for @position,remote: true  do |f| %>
-    <h4 style="margin-left:300px;">Compose new Position</h4>
-    <div class="form-group">
-      <%= f.text_field :title,:class => "form-control",:placeholder=>"Title"%>
-    </div>
-    <div class="form-group">
-      <%= f.text_area :description,
-                      :rows => 2,
-                      :cols => 60 ,
-                      :maxlength => 50,
-                      :minlength=> 5,
-                      :autocomplete => :off,
-                      :class => "form-control",:placeholder=>"Add description"%>
-    </div>
-    <div class="form-group">
-      <%if params[:action] == 'edit'%>
-          <%= f.submit "Update Position",:class => "btn btn-primary pull-left"%>
-      <% else %>
-          <%= f.submit "Create Position",:class => "btn btn-primary pull-left"%>
-      <% end %>
-    </div></br></br>
-<% end %>
-<%= link_to "Back",positions_path ,:class=>"btn btn-success"%>
+<div style="margin-left:30px;">
+  <%= form_for @position,remote: true  do |f| %>
+      <div class="form-group">
+        <%= f.text_field :title,:class => "form-control",:placeholder=>"Title"%>
+      </div>
+      <div class="form-group">
+        <%= f.text_area :description,
+                        :rows => 2,
+                        :cols => 60 ,
+                        :maxlength => 50,
+                        :minlength=> 5,
+                        :autocomplete => :off,
+                        :class => "form-control",:placeholder=>"Add description"%>
+      </div>
+      <div class="form-group">
+        <%if params[:action] == 'edit'%>
+            <%= f.submit "Update Position",:class => "btn btn-primary pull-left"%>
+        <% else %>
+            <%= f.submit "Create Position",:class => "btn btn-primary pull-left"%>
+        <% end %>
+      </div></br></br>
+  <% end %>
+  <%= link_to "Back",positions_path ,:class=>"btn btn-success"%>
+</div>
