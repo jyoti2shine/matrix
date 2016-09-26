@@ -18,7 +18,8 @@
                   <tr>
                     <td><%= training.name %></td>
                     <% @positions.each do |position|%>
-                        <td><%= check_box_tag "training[]#{training.name}[]", position.id %></td>
+                        <% hidden_field_tag "trainings[]#{training.name}[]",nil  %>
+                        <td><%= check_box_tag "trainings[]#{training.name}[]", position.id %></td>
                         <!--<td><input type="checkbox" value =<%#= training.id %>,<%#= position.id %> id="<%#= training.id %>,<%#= position.id %>"></td>-->
                     <% end %>
                   </tr>
