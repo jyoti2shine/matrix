@@ -1,0 +1,40 @@
+<div class="col-lg-12">
+  <h3>Matrix Table</h3>
+  <% if (@positions && @trainings).present? %>
+      <div class="col-lg-10">
+        <p class="position-text"><b>Positions</b></p>
+        <%= form_tag homes_path do |f|%>
+            <table class="responsive-table-input-matrix">
+              <thead>
+              <tr>
+                <td></td>
+                <% @positions.each do |position|%>
+                    <td><%=position.title%></td>
+                <% end %>
+              </tr>
+              </thead>
+              <tbody>
+              <% @trainings.each do |training|%>
+                  <tr>
+                    <td><%= training.name %></td>
+                    <% @positions.each do |position|%>
+                        <td><%= check_box_tag "training[]#{training.name}[]", position.id %></td>
+                        <!--<td><input type="checkbox" value =<%#= training.id %>,<%#= position.id %> id="<%#= training.id %>,<%#= position.id %>"></td>-->
+                    <% end %>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+            <br/>
+            <%= submit_tag "Submit", class: "btn btn-primary" %>
+        <% end %>
+        <p class="training-text"><b>Trainings</b></p>
+      </div>
+  <% else %>
+      <p>No Record is found</p>
+  <% end %>
+  <div class="col-lg-2">
+    <%= link_to "Create Position", positions_path,:class => "pull-right btn btn-primary" %><br><br>
+    <%= link_to "Create Training", trainings_path,:class => "pull-right btn btn-primary" %>
+  </div>
+</div>

@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922091258) do
+ActiveRecord::Schema.define(version: 20160926094225) do
 
   create_table "positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.index ["title"], name: "index_positions_on_title", using: :btree
   end
 
   create_table "training_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160922091258) do
     t.integer  "number_of_day"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["name"], name: "index_trainings_on_name", using: :btree
   end
 
 end
