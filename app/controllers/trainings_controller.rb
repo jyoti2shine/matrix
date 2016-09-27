@@ -11,6 +11,8 @@ class TrainingsController < ApplicationController
     @training = Training.new(training_params)
     if @training.save
       redirect_to trainings_path
+    else
+      @errors = @training.errors.full_messages
     end
   end
 

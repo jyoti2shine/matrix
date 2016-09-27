@@ -12,6 +12,8 @@ class PositionsController < ApplicationController
     @position = Position.new(position_params)
     if @position.save
       redirect_to positions_path
+    else
+      @errors = @position.errors.full_messages
     end
   end
 

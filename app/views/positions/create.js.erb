@@ -1,2 +1,9 @@
+<% if @errors.present? %>
+<% @errors.each do |error| %>
+var error = "<%= error%>";
+$('#position_title ul').html('<li class="error">'+error+'</li>');
+<% end %>
+<% else %>
 $("#position_title")[0].reset();
 $("#position_description")[0].reset();
+<% end %>

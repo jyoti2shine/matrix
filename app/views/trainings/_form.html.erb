@@ -1,5 +1,8 @@
 <div class="form-div">
   <%= form_for @training,remote: true  do |f| %>
+      <div id='training_name'>
+        <ul></ul>
+      </div>
       <div class="form-group">
         <%= f.text_field :name,:class => "form-control",:placeholder=>"Enter name"%>
       </div>
