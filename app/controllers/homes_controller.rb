@@ -17,14 +17,6 @@ class HomesController < ApplicationController
     end
     redirect_to root_path
   end
-
-  def destroy
-    @selection = TrainingPosition.find(params[:format])
-    if  @selection.destroy
-      redirect_to root_path
-    end
-  end
-
   private
 
   def trainings_params
