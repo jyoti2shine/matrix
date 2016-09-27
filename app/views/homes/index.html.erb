@@ -20,7 +20,6 @@
                     <% @positions.each do |position|%>
                         <% hidden_field_tag "trainings[]#{training.name}[]",nil  %>
                         <td><%= check_box_tag "trainings[]#{training.name}[]", position.id %></td>
-                        <!--<td><input type="checkbox" value =<%#= training.id %>,<%#= position.id %> id="<%#= training.id %>,<%#= position.id %>"></td>-->
                     <% end %>
                   </tr>
               <% end %>
@@ -28,7 +27,7 @@
             </table>
             <br/>
             <%= submit_tag "Submit", class: "btn btn-primary" %>
-        <% end %>
+        <% end %><br>
         <p class="training-text"><b>Trainings</b></p>
       </div>
   <% else %>
@@ -38,4 +37,28 @@
     <%= link_to "Create Position", positions_path,:class => "pull-right btn btn-primary" %><br><br>
     <%= link_to "Create Training", trainings_path,:class => "pull-right btn btn-primary" %>
   </div>
+  <% if @selections.present? %>
+      <table class="responsive-table-input-matrix">
+        <thead>
+        <tr>
+          <th>Position</th>
+          <th>Training</th>
+          <th colspan="2">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @selections.each do |selection|%>
+            <tr>
+              <td><%= selection.position.title %></td>
+              <td><%= selection.training.name %></td>
+              <td><%= link_to 'Destroy',homes_path(selection),:method => :delete, remote: true, :data=> { :confirm=> 'Are you sure?' } %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+  <% end %>
 </div>
+
+
+
+
