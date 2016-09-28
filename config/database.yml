@@ -7,3 +7,14 @@ development:
   pool: 5
   username: root
   password: root
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  host: localhost
+  database: matrix-test
+  pool: 5
+  username: root
+  password: root
+
