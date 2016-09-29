@@ -31,28 +31,10 @@
         <p class="training-text"><b>Trainings</b></p>
       </div>
   <% else %>
-      <p>No Record is found</p>
+      <p>No Record is Found</p>
   <% end %>
   <div class="col-lg-2">
     <%= link_to "Create Position", positions_path,:class => "pull-right btn btn-primary" %><br><br>
     <%= link_to "Create Training", trainings_path,:class => "pull-right btn btn-primary" %>
   </div>
-  <% if @selections.present? %>
-      <table class="responsive-table-input-matrix">
-        <thead>
-        <tr>
-          <th>Position</th>
-          <th>Training</th>
-        </tr>
-        </thead>
-        <tbody>
-        <% @selections.each do |selection|%>
-            <tr>
-              <td><%= selection.position.title %></td>
-              <td><%= selection.training.name %></td>
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
-  <% end %>
 </div>
