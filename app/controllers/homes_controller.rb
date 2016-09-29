@@ -7,13 +7,9 @@ class HomesController < ApplicationController
 
   def create
     trainings_params.each do |data|
-     data.to_h.each_pair do |content, index|
-       Training.transaction do
-         trainings = Training.find_by_name(content).positions
-         trainings <<  Position.where(:id =>  (index - trainings.map(&:id).map(&:to_s)))
-         Training.find_by_name(content).training_positions.where.not(:position_id => index.reject(&:empty?)).map(&:destroy) #Delete record from database after checkbox is unchecked
-       end
-     end
+      data.to_h.each_pair do |content, index|
+        Training.find_by_name(content).position_ids = index.reject(&:blank?)
+      end
     end
     redirect_to root_path
   end
