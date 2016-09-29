@@ -221,7 +221,7 @@ DEPENDENCIES
   rails-controller-testing
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
-  shoulda-matchers
+  shoulda-matchers (~> 3.1)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
@@ -230,4 +230,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.12.2
+   1.13.1
