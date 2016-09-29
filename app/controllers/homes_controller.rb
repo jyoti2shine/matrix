@@ -17,6 +17,7 @@ class HomesController < ApplicationController
     end
     redirect_to root_path
   end
+
   private
 
   def trainings_params
