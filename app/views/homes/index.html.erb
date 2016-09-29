@@ -18,8 +18,8 @@
                   <tr>
                     <td><%= training.name %></td>
                     <% @positions.each do |position|%>
-                        <%= hidden_field_tag "trainings[]#{training.name}[]",nil  %>
-                        <td><%= check_box_tag "trainings[]#{training.name}[]", position.id,@selections.find_by_training_id_and_position_id(training.id,  position.id).present? %></td>
+                        <%= hidden_field_tag "trainings[]#{training.name}[]",nil , id: dom_id(training) %>
+                        <td><%= check_box_tag "trainings[]#{training.name}[]", position.id,training.position_ids.include?(position.id),id: dom_id(position) %></td>
                     <% end %>
                   </tr>
               <% end %>

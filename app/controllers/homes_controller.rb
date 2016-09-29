@@ -2,7 +2,7 @@ class HomesController < ApplicationController
   def index
     @positions = Position.all
     @trainings = Training.all
-    @selections = TrainingPosition.all
+    # @selections = TrainingPosition.all
   end
 
   def create
