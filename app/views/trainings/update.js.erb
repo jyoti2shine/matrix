@@ -1,0 +1,6 @@
+<% if @errors.present? %>
+  <% @errors.each do |error| %>
+    var error = "<%= error%>";
+    $('#training_name ul').html('<li class="error">'+error+'</li>');
+  <% end %>
+<% end %>

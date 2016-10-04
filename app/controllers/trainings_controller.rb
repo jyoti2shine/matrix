@@ -24,6 +24,8 @@ class TrainingsController < ApplicationController
     @training = Training.find(params[:id])
     if @training.update_attributes(training_params)
       redirect_to trainings_path
+    else
+      @errors = @training.errors.full_messages
     end
   end
 

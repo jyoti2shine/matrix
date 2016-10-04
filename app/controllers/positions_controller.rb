@@ -25,6 +25,8 @@ class PositionsController < ApplicationController
     @position = Position.find(params[:id])
     if @position.update_attributes(position_params)
       redirect_to positions_path
+    else
+      @errors = @position.errors.full_messages
     end
   end
 
